@@ -1,0 +1,188 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #ecf0f1;
+    --background-color: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+        "time greeting"
+        "quote quote"
+        "focus todo";
+}
+
+.time-section {
+    grid-area: time;
+    text-align: left;
+}
+
+.time {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.greeting-section {
+    grid-area: greeting;
+    text-align: right;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 600;
+    outline: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: text;
+}
+
+.quote-section {
+    grid-area: quote;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+}
+
+blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.focus-section {
+    grid-area: focus;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.focus {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    outline: none;
+    cursor: text;
+}
+
+.todo-section {
+    grid-area: todo;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.todo-input-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#addTodo {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+#addTodo:hover {
+    background-color: #2980b9;
+}
+
+.todo-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+.todo-list input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-areas:
+            "time"
+            "greeting"
+            "quote"
+            "focus"
+            "todo";
+    }
+
+    .greeting-section {
+        text-align: left;
+    }
+
+    .time {
+        font-size: 3rem;
+    }
+} 
